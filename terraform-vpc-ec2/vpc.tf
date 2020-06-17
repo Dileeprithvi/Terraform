@@ -226,7 +226,7 @@ resource "aws_instance" "private-instance" {
         key_name = "${var.key_name}"
         vpc_security_group_ids = ["${aws_security_group.sg_private.id}"]
   tags = {
-    Name = "web-instance"
+    Name = "private-instance"
   }
 }
 
