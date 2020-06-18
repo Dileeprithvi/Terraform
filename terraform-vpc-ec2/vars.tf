@@ -20,11 +20,7 @@ default = "10.0.0.0/26"
 }
 
 
-variable "azs" {
-description = "Defining the LIST of the azs"
-type = "list"
-default = ["us-east-1a","us-east-1b","us-east-1c"]
-}
+data "aws_availability_zones" "azs" {}
 
 
 variable "subnet_cidr" {
