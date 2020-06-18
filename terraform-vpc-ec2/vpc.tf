@@ -21,7 +21,8 @@ resource "aws_vpc" "terraform_vpc" {
 # Defining the VPC Subnets
 
 resource "aws_subnet" "subnets" {
-  count = "${length(var.azs)}"
+  count = "${length(data.aws_availability_zones.azs)}"
+  availability_zone = "${element(data.aws_availability_zones.azs,count.index)}"      
   vpc_id = "${aws_vpc.terraform_vpc.id}"
   cidr_block = "${element(var.subnet_cidr,count.index)}"
 
