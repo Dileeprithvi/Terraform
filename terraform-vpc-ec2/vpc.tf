@@ -22,7 +22,7 @@ resource "aws_vpc" "terraform_vpc" {
 
 resource "aws_subnet" "subnets" {
   count = "${length(var.azs)}"
-  vpc_id = "{aws_vpc.terraform_vpc.id}"
+  vpc_id = "${aws_vpc.terraform_vpc.id}"
   cidr_block = "${element(var.subnet_cidr,count.index)}"
 
   tags = {
