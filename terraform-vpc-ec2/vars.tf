@@ -14,14 +14,31 @@ description = "AWS region for hosting our your network"
 default = "us-east-1"
 }
 
-
-variable "aws_ami" {
-description = "AWS region for hosting our your network"
-default = "ami-09d95fab7fff3776c"
+variable "vpc_cidr" {
+description = "VPC CIDR Range"
+default = "10.0.0.0/26"
 }
 
 
-variable "key_name" {
-description = "Key name for SSH into EC2"
-default = "awskey1"
+variable "azs" {
+description = "Defining the LIST of the azs"
+type = "list"
+default = ["us-east-1a","us-east-1b","us-east-1c"]
 }
+
+
+variable "subnet_cidr" {
+description = "Defining the LIST of the subnet_cidr"
+type = "list"
+default = ["10.0.0.0/28","10.0.0.16/28","10.0.0.32/28"]
+}
+
+
+
+
+
+
+
+
+
+
