@@ -23,7 +23,7 @@ resource "aws_vpc" "terraform_vpc" {
 resource "aws_subnet" "pub-sub1" {
   cidr_block = "10.0.0.0/28"
   vpc_id = "${aws_vpc.terraform_vpc.id}"
-  availability_zone = "us-east-1a"
+  availability_zone = "ap-northeast-1a"
   map_public_ip_on_launch = true
 
   tags = {
@@ -35,7 +35,7 @@ resource "aws_subnet" "pub-sub1" {
 resource "aws_subnet" "pub-sub2" {
   cidr_block = "10.0.0.16/28"
   vpc_id = "${aws_vpc.terraform_vpc.id}"
-  availability_zone = "us-east-1b"
+  availability_zone = "ap-northeast-1d"
   map_public_ip_on_launch = true
 
   tags = {
@@ -46,7 +46,7 @@ resource "aws_subnet" "pub-sub2" {
 resource "aws_subnet" "pri-sub1" {
   cidr_block = "10.0.0.32/28"
   vpc_id = "${aws_vpc.terraform_vpc.id}"
-  availability_zone = "us-east-1c"
+  availability_zone = "ap-northeast-1a"
 
   tags = {
     Name = "pri-sub-A"
@@ -58,7 +58,7 @@ resource "aws_subnet" "pri-sub1" {
 resource "aws_subnet" "pri-sub2" {
   cidr_block = "10.0.0.48/28"
   vpc_id = "${aws_vpc.terraform_vpc.id}"
-  availability_zone = "us-east-1d"
+  availability_zone = "ap-northeast-1d"
 
   tags = {
     Name = "pri-sub-B"
@@ -229,10 +229,3 @@ resource "aws_instance" "private-instance" {
     Name = "private-instance"
   }
 }
-
-
-
-
-
-
-
